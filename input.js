@@ -1,4 +1,10 @@
 let connection;
+const {
+    MOVE_UP_KEY,
+    MOVE_RIGHT_KEY,
+    MOVE_DOWN_KEY,
+    MOVE_LEFT_KEY
+} = require(`./constants`)
 
 const handleUserInput = function(data){
     if (data === '\u0003') {
@@ -6,20 +12,20 @@ const handleUserInput = function(data){
         process.exit();
       }   
     if (key === 'w'){
-        connection.write("Move: up");
-        console.log("Successfully sent the command up" );
+        connection.write(MOVE_UP_KEY);
+        // console.log("Successfully sent the command up" );
     }
     if (key === 'a'){
-        connection.write("Move: left");
-        console.log("Successfully sent the command left" );
+        connection.write(MOVE_LEFT_KEY);
+        // console.log("Successfully sent the command left" );
     }
     if (key === 's'){
-        connection.write("Move: down");
-        console.log("Successfully sent the command down" );
+        connection.write(MOVE_DOWN_KEY);
+        // console.log("Successfully sent the command down" );
     }
     if (key === 'd'){
-        connection.write("Move: right");
-        console.log("Successfully sent the command right" );
+        connection.write(MOVE_RIGHT_KEY);
+        // console.log("Successfully sent the command right" );
     }
 
 
