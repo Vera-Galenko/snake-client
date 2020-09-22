@@ -8,20 +8,17 @@ const connect = function() {
     host: '10.0.2.15',
     port: 50541
   });
-
+// interpret incoming data as text
+conn.setEncoding('utf8'); 
  conn.on('connect', () => {
-    conn.write(data);
-    console.log('New client connected!');
+    conn.write('Name: VG');
+    console.log("Successfully connected to game server" );
   })
 
   conn.on('data', data => { //get message back from server
     console.log('server message', data)
   })
-  // interpret incoming data as text
-  conn.setEncoding('utf8'); 
- 
   
-
   return conn;
 }
 
